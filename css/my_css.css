@@ -1,0 +1,42 @@
+.info-show-right{
+    background-color: #f1efef;
+    width: 290px;
+    height: 600px;
+    float: right;
+    border-radius: 10px;
+}
+
+/*圆形头像*/
+.circleImg{
+    border-radius: 30px;
+    width:60px;
+    height:60px;
+}
+
+.info-avater{
+    height: 80px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.info-avater-detail span{
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.info-bottom{
+    width: 265px;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    /*background-color: greenyellow;*/
+    bottom: 25px;
+}
+
+.part2{
+    width: 800px;
+    margin-top: 50px;
+}
