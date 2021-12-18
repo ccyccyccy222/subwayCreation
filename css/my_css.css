@@ -1,9 +1,11 @@
 .info-show-right{
+    padding: 12px;
+    position: relative;
     background-color: #f1efef;
     width: 290px;
     height: 600px;
     float: right;
-    border-radius: 10px;
+    border-radius: 7px;
 }
 
 /*圆形头像*/
