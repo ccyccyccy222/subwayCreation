@@ -123,15 +123,19 @@
                     <form class="form-inline">
                         <div class="form-group">
                             <label>
-                                <input type="text" class="form-control" style="width: 300px" placeholder="请输入您要查找的作品编号">
+                                <input type="text" class="form-control" style="width: 300px"
+                                       placeholder="请输入作品编号或名称" id="findInput">
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary"
-                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px">查找
+                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px" onclick="find()">查找
                         </button>
                         <button type="button" class="btn btn-primary"
                             style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px"
                             data-toggle="modal" data-target="#exampleModal1">上传
+                        </button>
+                        <button type="button" class="btn btn-primary"
+                                style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px" onclick="showAll()">全部作品
                         </button>
 
                     </form>
@@ -141,9 +145,9 @@
                 <!--            内容-->
                 <div class="col-md-12">
                     <div class="card-deck" style="margin-top: 60px;margin-bottom: 30px;display: none" id="contentEmpty">
-                        <div class="card" style="display: none" id="cardEmpty">
-                            <img src="images/product1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
+                        <div class="card" style="display: none;border: none;width: 30%" id="cardEmpty" >
+                            <img src="images/product1.jpg" class="card-img-top" alt="..." style="width: 340px;height: 255px;">
+                            <div class="card-body" style="width: 340px;">
                                 <h3 class="card-title" style="margin-bottom: 20px">黄河汹涌</h3>
                                 <p class="card-text">作者：ccyccyccy222</p>
                                 <p class="card-text">作品编号：0001</p>
@@ -184,6 +188,18 @@
                             <div class="mb-3">
                                 <label for="recipient-intro" class="col-form-label">作品简介:</label>
                                 <input type="text" class="form-control" id="recipient-intro">
+                            </div>
+                            <div class="mb-3">
+                                <label for="recipient-intro" class="col-form-label">作品分类:</label>
+                            </div>
+                            <div class="mb-3" style="display:flex;justify-content:space-around; ">
+                                <label>
+                                    <input type="radio" name="type" value="美术作品类">美术作品类
+                                    <input type="radio" name="type" style="margin-left: 10px" value="摄影类">摄影类
+                                    <input type="radio" name="type" style="margin-left: 10px" value="视频类">视频类
+                                    <input type="radio" name="type" style="margin-left: 10px" value="音乐类">音乐类
+                                    <input type="radio" name="type" style="margin-left: 10px" value="文字作品类">文字作品类
+                                </label>
                             </div>
                             <div class="input-group mb-3">
                                 <input type="file" class="form-control" id="inputGroupFile02">

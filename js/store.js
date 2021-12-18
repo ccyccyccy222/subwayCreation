@@ -172,7 +172,8 @@ initData=()=>{
     creations.push(creation4);
     creations.push(creation5);
     creations.push(creation6);
-    sessionStorage.setItem("creations",JSON.stringify(creations))
+    sessionStorage.setItem("creations",JSON.stringify(creations));
+    sessionStorage.setItem("filterCreations",JSON.stringify(creations))
 //     for (let i=0;i<creations.length;i++){
 //         let item=JSON.stringify(creations[i]);
 //         sessionStorage.setItem("creation"+i,item);

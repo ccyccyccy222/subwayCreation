@@ -1,6 +1,8 @@
 initCreation=()=>{
-    let creations=sessionStorage.getItem("creations");
+    let creations=sessionStorage.getItem("filterCreations");
     creations=JSON.parse(creations);
+    // console.log(creations);
+    // console.log("creations[0].imgUrl:"+creations[0].imgUrl);
     let cardDeck=document.getElementById("contentEmpty");
     let card=document.getElementById("cardEmpty");
     let row=Math.ceil(creations.length/3);
@@ -11,10 +13,14 @@ initCreation=()=>{
         cloneCardDecks.push(cardDeck.cloneNode(true));
         // cloneCardDecks[i].setAttribute("id","cloneCardDecks"+i);
         cloneCardDecks[i].style.display="flex";
+        cloneCardDecks[i].style.justifyContent="flex-start";
+        // cloneCardDecks[i].style.flex="1 1 auto";
         cloneCardDecks[i].id="cloneCardDecks"+i;
 
+        let len=3;
+        if(i===row-1&&creations.length%3!==0) len=creations.length%3
         // 对每个cloneCardDeck加上元素
-        for(let j=0;j<3;j++){
+        for(let j=0;j<len;j++){
             cloneCard.push(card.cloneNode(true));
             cloneCard[i*3+j].style.display="block";
             cloneCard[i*3+j].id="cloneCard"+i+j;
@@ -38,6 +44,13 @@ initCreation=()=>{
 
 }
 
+showAll=()=>{
+    console.log("in show all")
+    sessionStorage.setItem("filterCreations",sessionStorage.getItem("creations"));
+    // initCreation();
+    location.reload()
+}
+
 
 submitCreation=()=>{
 
@@ -45,6 +58,16 @@ submitCreation=()=>{
     let name=document.getElementById("recipient-name").value;
     //作品简介
     let intro=document.getElementById("recipient-intro").value;
+    let type=document.getElementsByName("type");
+    console.log(type);
+    let thisType;
+    for(let i=0;i<type.length;i++){
+        if(type[i].checked===true){
+            thisType=type[i].value;
+            break;
+        }
+    }
+    console.log("type:"+thisType);
 
     //计算这是第几个作品
     let creations=JSON.parse(sessionStorage.getItem("creations"));
@@ -61,19 +84,21 @@ submitCreation=()=>{
     let imgUrl="uploadImage/"+valueItem[valueItem.length-1];
 
     // 在页面中添加
-    let div=document.getElementById("addCreationDiv");
-    let cloneNode=div.cloneNode(true);
-    cloneNode.setAttribute("id","addCreation"+length)
-    cloneNode.style.display="block";
-    let image=cloneNode.getElementsByTagName("img")[0];
-    image.setAttribute("src",imgUrl);
-    let h4=cloneNode.getElementsByTagName("h3")[0];
-    h4.innerHTML=name;
-    cloneNode.getElementsByTagName("p")[0].innerHTML="作者："+name;
-    cloneNode.getElementsByTagName("p")[1].innerHTML="作品编号：000"+length;
-    cloneNode.getElementsByTagName("p")[2].innerHTML="作品分类："+name;
-    cloneNode.getElementsByTagName("p")[3].innerHTML="发布日期："+Date.now();
-    div.parentNode.appendChild(cloneNode);
+    // let div=document.getElementById("addCreationDiv");
+    // let cloneNode=div.cloneNode(true);
+    // cloneNode.setAttribute("id","addCreation"+length)
+    // cloneNode.style.display="block";
+    // let image=cloneNode.getElementsByTagName("img")[0];
+    // image.setAttribute("src",imgUrl);
+    // let h4=cloneNode.getElementsByTagName("h3")[0];
+    // h4.innerHTML=name;
+    // cloneNode.getElementsByTagName("p")[0].innerHTML="作者："+name;
+    // cloneNode.getElementsByTagName("p")[1].innerHTML="作品编号：000"+length;
+    // cloneNode.getElementsByTagName("p")[2].innerHTML="作品分类："+name;
+    // cloneNode.getElementsByTagName("p")[3].innerHTML="发布日期："+Date.now();
+    // div.parentNode.appendChild(cloneNode);
+
+    let date=new Date();
 
     // 存入sessionStorage中
     let creation={
@@ -84,9 +109,9 @@ submitCreation=()=>{
             avaterName:"ccyccyccy222"
         },
         info:{
-            id:"000"+length,
-            type:"美术作品类",
-            releaseDate:Date.now(),
+            id:"000"+(length+1),
+            type:type,
+            releaseDate:date.Format("yyyy-MM-dd"),
             introduction:intro
         },
         like:0,
@@ -94,5 +119,52 @@ submitCreation=()=>{
         comment:[]
     }
     creations.push(creation);
-    sessionStorage.setItem("creations",JSON.stringify(creations))
+    sessionStorage.setItem("creations",JSON.stringify(creations));
+    sessionStorage.setItem("filterCreations",JSON.stringify(creations));
+    location.reload();
+}
+
+// 查找功能
+find=()=>{
+    let value=document.getElementById("findInput").value;
+    console.log(value);
+    if(value==='') {
+        // let filterCreations=JSON.parse(sessionStorage.getItem("creations"));
+        sessionStorage.setItem("filterCreations",sessionStorage.getItem("creations"));
+        // console.log(filterCreations);
+        // location.reload();
+    }
+    else{
+        let filterCreations=JSON.parse(sessionStorage.getItem("creations"));
+        for(let i=0;i<filterCreations.length;i++){
+            let name=filterCreations[i].name;
+            let id=filterCreations[i].info.id;
+            if(name.indexOf(value)===-1&&id.indexOf(value)===-1){
+                //名字不包含要查询的字符串且id也不包含，则删除
+                filterCreations.splice(i,1);
+                i--;
+            }
+        }
+        console.log(filterCreations);
+        sessionStorage.setItem("filterCreations",JSON.stringify(filterCreations));
+        // location.reload();
+    }
+    // location.reload();
+}
+
+Date.prototype.Format = function (fmt) { // author: meizz
+    const o = {
+        "M+": this.getMonth() + 1, // 月份
+        "d+": this.getDate(), // 日
+        "h+": this.getHours(), // 小时
+        "m+": this.getMinutes(), // 分
+        "s+": this.getSeconds(), // 秒
+        "q+": Math.floor((this.getMonth() + 3) / 3), // 季度
+        "S": this.getMilliseconds() // 毫秒
+    };
+    if (/(y+)/.test(fmt))
+        fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+    for (const k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+    return fmt;
 }
