@@ -97,7 +97,7 @@ let creation3={
     ]
 }
 let creation4={
-    imgUrl:"images/product5.jpg",
+    imgUrl:"images/product5.png",
     name:"站台",
     author:{
         avaterUrl:"images/person_8.png",
@@ -143,7 +143,7 @@ let creation5={
     ]
 }
 let creation6={
-    imgUrl:"images/product6.jpg",
+    imgUrl:"images/product6.png",
     name:"地铁车厢",
     author:{
         avaterUrl:"images/person_6.png",
