@@ -74,8 +74,102 @@
 
                 <div class="row">
                     <div class="col-sm-2 col-xs-12">
-                        <div id="gtco-logo"><a href="index.html"><img src="images/logo.png"
-                                    alt="Free HTML5 Website Template by FreeHTML5.co"></a>
+                        <div id="gtco-logo"><a href="index.html"><img src="images/默认头像.png"
+                                    alt="Free HTML5 Website Template by FreeHTML5.co" style="width: 40px;"></a>
+                        </div>
+                    </div>
+                    <!-- 登录注册 -->
+                    <div style="position: absolute;">
+                        <div>
+                            <!--                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
+                            <!--                        data-whatever="@getbootstrap">发表您的灵感</button>-->
+                            <button type="submit" class="btn-primary"
+                                style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 80px;"
+                                data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">登录
+                            </button>
+                            <button type="submit" class="btn-primary"
+                                style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 10px;"
+                                data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap">注册
+                            </button>
+                        </div>
+                        <!-- 登录的对话框 -->
+                        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="font-family: KaiTi;font-size: 17px;">登录
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">登录信息</label>
+                                                <div class="input-group" style="margin-top: 10px;">
+                                                    <span class="input-group-addon" id="sizing-addon2">手机号</span>
+                                                    <input type="text" class="form-control" placeholder="Telephone"
+                                                        aria-describedby="sizing-addon2">
+                                                </div>
+                                                <div class="input-group" style="margin-top: 15px;">
+                                                    <span class="input-group-addon" id="sizing-addon3">密码</span>
+                                                    <input type="text" class="form-control" placeholder="Password"
+                                                        aria-describedby="sizing-addon2">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary">确定</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 注册的对话框 -->
+                        <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel"
+                                            style="font-family: KaiTi;font-size: 17px;">注册
+                                        </h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="message-text" class="col-form-label">注册信息</label>
+                                                <div class="input-group" style="margin-top: 10px;">
+                                                    <span class="input-group-addon" id="sizing-addon6">姓名</span>
+                                                    <input type="text" class="form-control" placeholder="Username"
+                                                        aria-describedby="sizing-addon2">
+                                                </div>
+                                                <div class="input-group" style="margin-top: 10px;">
+                                                    <span class="input-group-addon" id="sizing-addon4">手机号</span>
+                                                    <input type="text" class="form-control" placeholder="Telephone"
+                                                        aria-describedby="sizing-addon2">
+                                                </div>
+                                                <div class="input-group" style="margin-top: 15px;">
+                                                    <span class="input-group-addon" id="sizing-addon5">密码</span>
+                                                    <input type="text" class="form-control" placeholder="Password"
+                                                        aria-describedby="sizing-addon2">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                        <button type="button" class="btn btn-primary">注册</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="col-xs-10 text-right menu-1">
@@ -130,7 +224,7 @@
                 <div class="row row-pb-md">
                     <div class="col-md-4 col-sm-4">
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/creation1.jpg)">
+                            style="background-image: url(images/product1.jpg)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -141,7 +235,7 @@
                             <!--                        <img src="images/creation1.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">-->
                         </a>
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/img_5.png)">
+                            style="background-image: url(images/product5.png)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -153,7 +247,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/img_6.png)">
+                            style="background-image: url(images/product3.jpg)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -164,7 +258,7 @@
                             <!--                        <img src="images/creation1.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">-->
                         </a>
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/img_7.png)">
+                            style="background-image: url(images/product4.jpg)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -176,7 +270,7 @@
                     </div>
                     <div class="col-md-4 col-sm-4">
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/img_8.png)">
+                            style="background-image: url(images/product2.jpg)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -187,7 +281,7 @@
                             <!--                        <img src="images/creation1.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">-->
                         </a>
                         <a href="#" class="gtco-item two-row bg-img animate-box"
-                            style="background-image: url(images/img_9.png)">
+                            style="background-image: url(images/product6.png)">
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
@@ -230,9 +324,9 @@
                         <div class="gtco-testimony gtco-left">
                             <div><img src="images/person_1.jpg" alt="Free Website template by FreeHTML5.co"></div>
                             <blockquote>
-                                <p>&ldquo;Design must be functional and functionality must be translated into visual
-                                    aesthetics, without any reliance on gimmicks that have to be explained.&rdquo; <cite
-                                        class="author">&mdash; Ferdinand A. Porsche</cite></p>
+                                <p>&ldquo;西洋人站在固定地点，由固定角度透视深空，他对这无穷空间的态度是追寻的、控制的、冒险的、探索的 。中国人于有限中见到无限，又于无限中回归有限。他的意趣不是一往不返，而是回旋往复的。&rdquo;
+                                    <cite class="author">&mdash; Ferdinand A. Porsche</cite>
+                                </p>
                             </blockquote>
                         </div>
                     </div>
@@ -241,11 +335,7 @@
                         <div class="gtco-testimony gtco-left">
                             <div><img src="images/person_2.jpg" alt="Free Website template by FreeHTML5.co"></div>
                             <blockquote>
-                                <p>&ldquo;Creativity is just connecting things. When you ask creative people how they
-                                    did
-                                    something, they feel a little guilty because they didn’t really do it, they just saw
-                                    something. It seemed obvious to them after a while.&rdquo; <cite
-                                        class="author">&mdash;
+                                <p>&ldquo;所谓时尚，不单单指在某时段里流行的文化。时尚代表的是一定的高度，一种崇高的东西。&rdquo; <cite class="author">&mdash;
                                         Steve Jobs</cite></p>
                             </blockquote>
                         </div>
@@ -258,10 +348,8 @@
                         <div class="gtco-testimony gtco-left">
                             <div><img src="images/person_3.jpg" alt="Free Website template by FreeHTML5.co"></div>
                             <blockquote>
-                                <p>&ldquo;I think design would be better if designers were much more skeptical about its
-                                    applications. If you believe in the potency of your craft, where you choose to dole
-                                    it
-                                    out is not something to take lightly.&rdquo; <cite class="author">&mdash; Frank
+                                <p>&ldquo;所有艰苦的努力，在最后都要以一种轻松的姿态呈现出来。所有人生波迭起荡，都要在审美中展现不可思议的生机。所有传统技艺内蕴的美都是圆。&rdquo; <cite
+                                        class="author">&mdash; Frank
                                         Chimero</cite></p>
                             </blockquote>
                         </div>
@@ -269,10 +357,9 @@
 
                     <div class="col-md-6 col-sm-6 animate-box">
                         <div class="gtco-testimony gtco-left">
-                            <div><img src="images/person_1.jpg" alt="Free Website template by FreeHTML5.co"></div>
+                            <div><img src="images/person_6.png" alt="Free Website template by FreeHTML5.co"></div>
                             <blockquote>
-                                <p>&ldquo;Design must be functional and functionality must be translated into visual
-                                    aesthetics, without any reliance on gimmicks that have to be explained.&rdquo; <cite
+                                <p>&ldquo;以能圆故，无始无极，绵绵无尽。涵泳久之，由技艺的圆熟醇和，能窥未发之中，谓技进于道，天人合一。&rdquo; <cite
                                         class="author">&mdash; Ferdinand A. Porsche</cite></p>
                             </blockquote>
                         </div>
@@ -426,7 +513,11 @@
         });
     </script>
     <!-- End demo purposes only -->
-
+    <style>
+        .modal-backdrop.in {
+            z-index: -1;
+        }
+    </style>
 </body>
 
 </html>
