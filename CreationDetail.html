@@ -170,13 +170,41 @@
                     <button type="button" class="btn btn-primary"
                             style="height:35px;padding-top: 0;padding-bottom: 0;
                             font-size: 18px;margin:0 0 0 20px;"
-                            data-toggle="modal" data-target="#exampleModal1">发表
+                            data-toggle="modal" data-target="#exampleModal2">发表
                     </button>
                 </div>
 
+<!--                模态框-->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">发表评论</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label for="message-text" class="col-form-label">评论</label>
+                                        <textarea class="form-control" id="message-text"></textarea>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+                                <button type="button" class="btn btn-primary" onclick="submit()" data-dismiss="modal">发表</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
                 <hr/>
-                <ul style="list-style: none">
-                    <li>
+                <ul style="list-style: none" id="commentUL">
+                    <li id="modelLi" style="display: none;border-bottom: #8c8c8c;border-bottom-width: thin">
                         <div class="info-avater">
                             <img src="images/person_10.png" alt="author" class="circleImg">
                             <div class="info-avater-detail" style="margin: 7px">
@@ -184,9 +212,8 @@
                                 <p style="margin-top: 20px;margin-left: 5px;">我觉得这个好漂亮！！</p>
                             </div>
                         </div>
-
                     </li>
-                    <hr/>
+<!--                    <hr/>-->
                 </ul>
             </div>
 

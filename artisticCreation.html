@@ -301,11 +301,28 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                        <button type="button" class="btn btn-primary">上传</button>
+                        <button type="button" class="btn btn-primary"
+                                onclick="submitCreation()" data-dismiss="modal"
+                                data-toggle="modal" data-target="#tip">上传</button>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!--    提示-->
+        <div class="modal fade" id="tip" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" >提示</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>上传成功！</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
 
         <!--We Love To Talk About Your Business-->
@@ -344,7 +361,7 @@
                     <div class="col-md-4 gtco-footer-subscribe">
                         <form class="form-inline">
                             <div class="form-group">
-                                <label class="sr-only" for="exampleInputEmail3">Email address</label>
+                                <label class="sr-only" for="">Email address</label>
                                 <input type="email" class="form-control" id="" placeholder="Email">
                             </div>
                             <button type="submit" class="btn btn-primary">Send</button>
@@ -372,6 +389,8 @@
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
 
+    <!-- atrtisticCreation.js -->
+    <script src="js/atrtisticCreation.js"></script>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- jQuery Easing -->
