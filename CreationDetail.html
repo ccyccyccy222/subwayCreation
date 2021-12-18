@@ -195,12 +195,29 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary" onclick="submit()" data-dismiss="modal">发表</button>
+                                <button type="button" class="btn btn-primary"
+                                        onclick="submit()" data-dismiss="modal"
+                                        data-toggle="modal" data-target="#tip2"
+                                >发表</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
+                <!--    提示-->
+                <div class="modal fade" id="tip2" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" >提示</h5>
+                            </div>
+                            <div class="modal-body">
+                                <p>发表成功！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <hr/>
                 <ul style="list-style: none" id="commentUL">

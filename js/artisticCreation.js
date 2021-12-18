@@ -17,11 +17,16 @@ initCreation=()=>{
         // cloneCardDecks[i].style.flex="1 1 auto";
         cloneCardDecks[i].id="cloneCardDecks"+i;
 
+
+
         let len=3;
         if(i===row-1&&creations.length%3!==0) len=creations.length%3
         // 对每个cloneCardDeck加上元素
         for(let j=0;j<len;j++){
             cloneCard.push(card.cloneNode(true));
+            let href="CreationDetail.html"+"?id="+(i*3+j+1);
+            cloneCard[i*3+j].onclick=()=>{window.location.href=href;}
+            console.log("cloneCard[i * 3 + j].onclick:"+cloneCard[i * 3 + j].onclick);
             cloneCard[i*3+j].style.display="block";
             cloneCard[i*3+j].id="cloneCard"+i+j;
             let img=cloneCard[i*3+j].getElementsByTagName("img")[0];

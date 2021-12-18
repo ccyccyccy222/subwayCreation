@@ -52,7 +52,7 @@ let creation2={
     imgUrl:"images/product2.jpg",
     name:"忆泉城系列",
     author:{
-        avaterUrl:"images/person_2.jpg",
+        avaterUrl:"images/person_8.jpg",
         avaterName:"周淑芬"
     },
     info:{
@@ -75,7 +75,7 @@ let creation3={
     imgUrl:"images/product3.jpg",
     name:"忆泉城系列",
     author:{
-        avaterUrl:"images/person_3.png",
+        avaterUrl:"images/person_3.jpg",
         avaterName:"LeBron Jobs"
     },
     info:{
@@ -85,7 +85,9 @@ let creation3={
         introduction:"略"
     },
     like:100,
+    likeColor:"none",
     coin:5,
+    coinColor:"none",
     comment:[
         {
             username:"徐小白",
@@ -98,7 +100,7 @@ let creation4={
     imgUrl:"images/product5.jpg",
     name:"站台",
     author:{
-        avaterUrl:"images/person_2.png",
+        avaterUrl:"images/person_8.png",
         avaterName:"周淑芬"
     },
     info:{
