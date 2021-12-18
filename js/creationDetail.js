@@ -28,8 +28,6 @@ initPage=()=>{
     // sessionStorage.setItem("creationDetail",creation)
     creation=sessionStorage.getItem("creationDetail");
     creation=JSON.parse(creation);
-
-
     //初始化评论内容
     initComment();
 }
@@ -44,6 +42,7 @@ initComment=()=>{
         // let ul=document.getElementById("commentUL");
         let li=document.getElementById("modelLi");
         let cloneNode=li.cloneNode(true);
+        cloneNode.setAttribute("id","addCom"+i)
         cloneNode.style.display="block";
         let image=cloneNode.getElementsByTagName("img")[0];
         image.setAttribute("src",avaterUrl);
