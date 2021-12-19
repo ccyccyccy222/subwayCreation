@@ -164,7 +164,7 @@
 
 
             </div>
-            <div class="row">
+            <div class="row" id="in">
                 <div class="col-md-6 col-sm-6 animate-box">
                     <div class="gtco-testimony gtco-left">
                         <div><img src="images/person_9.jpg" alt="Free Website template by FreeHTML5.co"></div>
@@ -186,25 +186,7 @@
                     </div>
                 </div>
             </div>
-            <nav aria-label="Page navigation" style="margin-left: 762px;">
-                <ul class="pagination label-primary">
-                    <li>
-                        <a href="#" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <li><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li>
-                        <a href="#" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+
             <div class="row">
                 <div class="col-md-12 text-center">
                     <!--                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"-->
@@ -235,7 +217,7 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary">发布</button>
+                                <button type="button" class="btn btn-primary publish">发布</button>
                             </div>
                         </div>
                     </div>
@@ -341,9 +323,37 @@
     })
 
     //存储数据 -> 发表灵感
-    localStorage.setItem("inspiration", "灵感：是指灵通感应；文艺、科学创造过程中突然爆发出来的创造能力，其产生虽带有偶然性，但它的获得却离不开创造者丰富的实践经验和知识积累。")
+    sessionStorage.setItem("inspiration", "灵感：是指灵通感应；文艺、科学创造过程中突然爆发出来的创造能力，其产生虽带有偶然性，但它的获得却离不开创造者丰富的实践经验和知识积累。")
     //获取灵感
-    var inspiration = localStorage.getItem("inspiration");
+    var inspiration = sessionStorage.getItem("inspiration");
+
+    //存灵感
+    var pub = document.querySelector('.publish');
+    var text = document.querySelector('#message-text')
+    pub.addEventListener('click', function () {
+        console.log(text.value);
+        sessionStorage.setItem("inspiration1", text.value);
+
+        $('#exampleModal').modal('hide')
+        location.reload()
+
+    })
+    //将灵感显示在页面上
+
+    if (sessionStorage.getItem("inspiration1") != null && sessionStorage.getItem("Username") != null) {
+        var tr = $(" <div class='col-md-6 col-sm-6 animate-box'> " +
+            "<div class='gtco-testimony gtco-left'>" +
+            "<div><img src='images/person_8.png' alt='Free Website template by FreeHTML5.co'>" + "</div>" +
+            "<blockquote>" +
+            "<p>&ldquo;" + sessionStorage.getItem("inspiration1")
+            + "&rdquo;"
+            + "<cite class='author'>&mdash; " + sessionStorage.getItem("Username") + "</cite>" +
+            "</p>" +
+            " </blockquote>" +
+            "</div>" +
+            "</div>");
+        $('#in').append(tr);
+    }
 </script>
 
 </html>

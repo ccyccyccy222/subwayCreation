@@ -85,12 +85,18 @@
                             <!--                        data-whatever="@getbootstrap">发表您的灵感</button>-->
                             <button type="submit" class="btn-primary"
                                 style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 80px;"
-                                data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap">登录
+                                data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap"
+                                id="login">登录
                             </button>
                             <button type="submit" class="btn-primary"
                                 style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 10px;"
-                                data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap">注册
+                                data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap"
+                                id="register1">注册
                             </button>
+                            <div style="position: absolute;top: 9px;left: 86px;display:none;width: 100px;" id="testbox">
+                                <span id="test">
+                                    测试</span>
+                            </div>
                         </div>
                         <!-- 登录的对话框 -->
                         <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
@@ -112,19 +118,19 @@
                                                 <div class="input-group" style="margin-top: 10px;">
                                                     <span class="input-group-addon" id="sizing-addon2">手机号</span>
                                                     <input type="text" class="form-control" placeholder="Telephone"
-                                                        aria-describedby="sizing-addon2">
+                                                        aria-describedby="sizing-addon2" id="tel1">
                                                 </div>
                                                 <div class="input-group" style="margin-top: 15px;">
                                                     <span class="input-group-addon" id="sizing-addon3">密码</span>
                                                     <input type="text" class="form-control" placeholder="Password"
-                                                        aria-describedby="sizing-addon2">
+                                                        aria-describedby="sizing-addon2" id="Password1">
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                        <button type="button" class="btn btn-primary">确定</button>
+                                        <button type="button" class="btn btn-primary" id="confirm">确定</button>
                                     </div>
                                 </div>
                             </div>
@@ -149,24 +155,24 @@
                                                 <div class="input-group" style="margin-top: 10px;">
                                                     <span class="input-group-addon" id="sizing-addon6">姓名</span>
                                                     <input type="text" class="form-control" placeholder="Username"
-                                                        aria-describedby="sizing-addon2">
+                                                        aria-describedby="sizing-addon2" id="Username">
                                                 </div>
                                                 <div class="input-group" style="margin-top: 10px;">
                                                     <span class="input-group-addon" id="sizing-addon4">手机号</span>
                                                     <input type="text" class="form-control" placeholder="Telephone"
-                                                        aria-describedby="sizing-addon2">
+                                                        aria-describedby="sizing-addon2" id="tel">
                                                 </div>
                                                 <div class="input-group" style="margin-top: 15px;">
                                                     <span class="input-group-addon" id="sizing-addon5">密码</span>
                                                     <input type="text" class="form-control" placeholder="Password"
-                                                        aria-describedby="sizing-addon2">
+                                                        aria-describedby="sizing-addon2" id="Password">
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
-                                        <button type="button" class="btn btn-primary">注册</button>
+                                        <button type="button" class="btn btn-primary" id="register">注册</button>
                                     </div>
                                 </div>
                             </div>
@@ -239,7 +245,7 @@
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
-                                    <h3>忆泉城系列</h3>
+                                    <h3>站台</h3>
                                 </div>
                             </div>
                             <!--                        <img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">-->
@@ -262,7 +268,7 @@
                             <div class="overlay">
                                 <i class="ti-arrow-top-right"></i>
                                 <div class="copy">
-                                    <h3>站台</h3>
+                                    <h3>忆泉城系列</h3>
                                 </div>
                             </div>
                             <!--                        <img src="images/img_2.jpg" class="hidden" alt="Free HTML5 Website Template by FreeHTML5.co">-->
@@ -296,11 +302,11 @@
                     <div class="col-md-12 text-center">
                         <!--                    <button class="btn btn-primary">上传</button>-->
                         <!--                    <button class="btn btn-primary" href="artisticCreation.html">更多</button>-->
-<!--                        <button type="submit" class="btn btn-primary"-->
-<!--                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px"-->
-<!--                                data-toggle="modal" data-target="#exampleModal1">上传-->
-<!--                            >上传-->
-<!--                        </button>-->
+                        <!--                        <button type="submit" class="btn btn-primary"-->
+                        <!--                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px"-->
+                        <!--                                data-toggle="modal" data-target="#exampleModal1">上传-->
+                        <!--                            >上传-->
+                        <!--                        </button>-->
                         <button type="submit" class="btn btn-primary"
                             style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px"
                             onclick="window.location.href='artisticCreation.html';">更多
@@ -374,12 +380,12 @@
                     <div class="col-md-12 text-center">
                         <!--                    <button class="btn btn-primary">发表</button>-->
                         <!--                    <button class="btn btn-primary">更多</button>-->
-<!--                        <button type="submit" class="btn btn-primary"-->
-<!--                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px">发表-->
-<!--                        </button>-->
+                        <!--                        <button type="submit" class="btn btn-primary"-->
+                        <!--                            style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px">发表-->
+                        <!--                        </button>-->
                         <button type="submit" class="btn btn-primary"
                             style="height:50px;padding-top: 0;padding-bottom: 0;font-size: 19px;margin: 5px"
-                                onclick="window.location.href='inspiration.html';">更多
+                            onclick="window.location.href='inspiration.html';">更多
                         </button>
                     </div>
                 </div>
@@ -519,6 +525,34 @@
                 $('#colour-variations').toggleClass('sleep');
             });
         });
+
+        // 存储注册信息
+        $('#register').click(function () {
+            console.log($('#Username').val())
+            sessionStorage.setItem("Username", $('#Username').val());
+            sessionStorage.setItem("tel", $('#tel').val());
+            sessionStorage.setItem("Password", $('#Password').val());
+            alert("注册成功")
+            $('#exampleModal1').modal('hide')
+        })
+        // 匹配一下登录信息
+        $('#confirm').click(function () {
+            if ($('#tel1').val() == sessionStorage.getItem("tel") && $('#Password1').val() == sessionStorage.getItem('Password')) {
+                alert("登录成功")
+                var login = document.querySelector('#login');
+                var register1 = document.querySelector('#register1');
+                var test = document.querySelector('#test');
+                var testbox = document.querySelector('#testbox');
+                testbox.style.display = 'inline-block';
+                test.innerHTML = sessionStorage.getItem("Username");
+                login.style.display = 'none';
+                register1.style.display = 'none';
+                $('#exampleModal2').modal('hide')
+            }
+            else {
+                alert("手机号或密码不正确")
+            }
+        })
     </script>
     <!-- End demo purposes only -->
     <style>
