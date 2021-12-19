@@ -1,8 +1,6 @@
 initCreation=()=>{
     let creations=sessionStorage.getItem("filterCreations");
     creations=JSON.parse(creations);
-    // console.log(creations);
-    // console.log("creations[0].imgUrl:"+creations[0].imgUrl);
     let cardDeck=document.getElementById("contentEmpty");
     let card=document.getElementById("cardEmpty");
     let row=Math.ceil(creations.length/3);
@@ -11,20 +9,17 @@ initCreation=()=>{
     let cloneCard=[];
     for(let i=0;i<row;i++){
         cloneCardDecks.push(cardDeck.cloneNode(true));
-        // cloneCardDecks[i].setAttribute("id","cloneCardDecks"+i);
         cloneCardDecks[i].style.display="flex";
         cloneCardDecks[i].style.justifyContent="flex-start";
-        // cloneCardDecks[i].style.flex="1 1 auto";
         cloneCardDecks[i].id="cloneCardDecks"+i;
-
-
 
         let len=3;
         if(i===row-1&&creations.length%3!==0) len=creations.length%3
         // 对每个cloneCardDeck加上元素
         for(let j=0;j<len;j++){
             cloneCard.push(card.cloneNode(true));
-            let href="CreationDetail.html"+"?id="+(i*3+j+1);
+            let hrefId=Number(creations[i*3+j].info.id);
+            let href="CreationDetail.html"+"?id="+hrefId;
             cloneCard[i*3+j].onclick=()=>{window.location.href=href;}
             console.log("cloneCard[i * 3 + j].onclick:"+cloneCard[i * 3 + j].onclick);
             cloneCard[i*3+j].style.display="block";
@@ -88,21 +83,6 @@ submitCreation=()=>{
     // console.log(valueItem);
     let imgUrl="uploadImage/"+valueItem[valueItem.length-1];
 
-    // 在页面中添加
-    // let div=document.getElementById("addCreationDiv");
-    // let cloneNode=div.cloneNode(true);
-    // cloneNode.setAttribute("id","addCreation"+length)
-    // cloneNode.style.display="block";
-    // let image=cloneNode.getElementsByTagName("img")[0];
-    // image.setAttribute("src",imgUrl);
-    // let h4=cloneNode.getElementsByTagName("h3")[0];
-    // h4.innerHTML=name;
-    // cloneNode.getElementsByTagName("p")[0].innerHTML="作者："+name;
-    // cloneNode.getElementsByTagName("p")[1].innerHTML="作品编号：000"+length;
-    // cloneNode.getElementsByTagName("p")[2].innerHTML="作品分类："+name;
-    // cloneNode.getElementsByTagName("p")[3].innerHTML="发布日期："+Date.now();
-    // div.parentNode.appendChild(cloneNode);
-
     let date=new Date();
 
     // 存入sessionStorage中
@@ -110,12 +90,12 @@ submitCreation=()=>{
         imgUrl:imgUrl,
         name:name,
         author:{
-            avaterUrl:"images/person_1.jpg",
-            avaterName:"ccyccyccy222"
+            avaterUrl:"images/默认头像.png",
+            avaterName:sessionStorage.getItem("Username")
         },
         info:{
             id:"000"+(length+1),
-            type:type,
+            type:thisType,
             releaseDate:date.Format("yyyy-MM-dd"),
             introduction:intro
         },
@@ -127,6 +107,7 @@ submitCreation=()=>{
     sessionStorage.setItem("creations",JSON.stringify(creations));
     sessionStorage.setItem("filterCreations",JSON.stringify(creations));
     location.reload();
+    alert("上传成功！")
 }
 
 // 查找功能
@@ -155,6 +136,15 @@ find=()=>{
         // location.reload();
     }
     // location.reload();
+}
+
+// 判断用户是否登录
+judgeLoginToSubmit=()=>{
+    if(sessionStorage.getItem("Username") === null){
+        // 用户未登录
+        alert("请先登录")
+        $('#exampleModal3').modal('hide');
+    }else submitCreation();
 }
 
 Date.prototype.Format = function (fmt) { // author: meizz

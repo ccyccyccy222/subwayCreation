@@ -1,29 +1,3 @@
-// creationDetail页存储的内容
-// let creation={
-//     name:"趵突泉木雕画",
-//     author:{
-//         avaterUrl:"images/person_8.png",
-//         avaterName:"ccyccyccy222"
-//     },
-//     info:{
-//         id:"0001",
-//         type:"美术作品类",
-//         releaseDate:"2021-12-01",
-//         introduction:"略"
-//     },
-//     like:123,
-//     coin:3,
-//     comment:[
-//         {
-//             username:"徐小白",
-//             avaterUrl: "images/person_10.png",
-//             content:"我觉得这个好漂亮！！",
-//         }
-//     ]
-// }
-//
-// creation=JSON.stringify(creation);
-// localStorage.setItem("creationDetail",creation)
 let creations=[];
 let creation1={
     imgUrl:"images/product1.jpg",
@@ -52,7 +26,7 @@ let creation2={
     imgUrl:"images/product2.jpg",
     name:"忆泉城系列",
     author:{
-        avaterUrl:"images/person_8.jpg",
+        avaterUrl:"images/person_8.png",
         avaterName:"周淑芬"
     },
     info:{
@@ -176,10 +150,4 @@ initData=()=>{
     creations.push(creation6);
     sessionStorage.setItem("creations",JSON.stringify(creations));
     sessionStorage.setItem("filterCreations",JSON.stringify(creations))
-//     for (let i=0;i<creations.length;i++){
-//         let item=JSON.stringify(creations[i]);
-//         sessionStorage.setItem("creation"+i,item);
-//         // creation=JSON.stringify(creation);
-// // localStorage.setItem("creationDetail",creation)
-//     }
 }

@@ -98,8 +98,6 @@ initPage=()=>{
     let argsIndex = url .split("?id=");
     let id = argsIndex[1];
     console.log("id:"+id);
-    // creation=JSON.stringify(creation);
-    // sessionStorage.setItem("creationDetail",creation)
     creation=sessionStorage.getItem("creations");
     creation=JSON.parse(creation);
 
@@ -129,12 +127,6 @@ changeColor=(id)=>{
     creation=JSON.stringify(creation);
     sessionStorage.setItem("creations",creation);
     location.reload();
-    // ele.style.color=color;
-    // let p=ele.getElementsByTagName("p")[0];
-    // // let p=document.getElementById(id+"_p");
-    // let text=p.innerHTML;
-    // console.log(text);
-    // p.innerHTML=String(Number(text) + 1);
 }
 
 // 发表评论的方法
@@ -144,10 +136,22 @@ submit=()=>{
 
     let item={...creationElement.comment[0]};
     item.content=content;
+    item.username=sessionStorage.getItem("Username");
+    item.avaterUrl="images/默认头像.png";
     creationElement.comment.push(item);
     creation=JSON.stringify(creation);
     sessionStorage.setItem("creations",creation);
     location.reload();
+    alert("发表成功！");
+}
+
+// 判断用户是否登录
+judgeLoginToCommentSubmit=()=>{
+    if(sessionStorage.getItem("Username") === null){
+        // 用户未登录
+        alert("请先登录")
+        $('#exampleModal3').modal('hide');
+    }else submit();
 }
 
 

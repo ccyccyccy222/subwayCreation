@@ -1,15 +1,10 @@
 <!DOCTYPE HTML>
-<!--
-	Cube by FreeHTML5.co
-	Twitter: http://twitter.com/gettemplateco
-	URL: http://freehtml5.co
--->
 <html>
 
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Cube &mdash; Free Website Template, Free HTML5 Template by FreeHTML5.co</title>
+	<title>济南地铁文创</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords"
@@ -73,8 +68,107 @@
 
 				<div class="row">
 					<div class="col-sm-2 col-xs-12">
-						<div id="gtco-logo"><a href="index.html"><img src="images/logo.png"
-									alt="Free HTML5 Website Template by FreeHTML5.co"></a></div>
+						<div id="gtco-logo"><a href="index.html"><img src="images/默认头像.png"
+																	  alt="Free HTML5 Website Template by FreeHTML5.co" style="width: 40px;"></a>
+						</div>
+					</div>
+					<!-- 登录注册 -->
+					<div style="position: absolute;">
+						<div>
+							<button type="submit" class="btn-primary"
+									style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 80px;"
+									data-toggle="modal" data-target="#exampleModal2" data-whatever="@getbootstrap"
+									id="login">登录
+							</button>
+							<button type="submit" class="btn-primary"
+									style="height:25px;padding-top: 0;padding-bottom: 0;font-size: 14px;margin-top: 10px;margin-left: 10px;"
+									data-toggle="modal" data-target="#exampleModal1" data-whatever="@getbootstrap"
+									id="register1">注册
+							</button>
+							<div style="position: absolute;top: 9px;left: 86px;display:none;width: 100px;" id="testbox">
+                                <span id="test">
+                                    测试</span>
+							</div>
+						</div>
+						<!-- 登录的对话框 -->
+						<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog"
+							 aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title"
+											style="font-family: KaiTi;font-size: 17px;">登录
+										</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="form-group">
+												<label for="" class="col-form-label">登录信息</label>
+												<div class="input-group" style="margin-top: 10px;">
+													<span class="input-group-addon" id="sizing-addon2">手机号</span>
+													<input type="text" class="form-control" placeholder="Telephone"
+														   aria-describedby="sizing-addon2" id="tel1">
+												</div>
+												<div class="input-group" style="margin-top: 15px;">
+													<span class="input-group-addon" id="sizing-addon3">密码</span>
+													<input type="text" class="form-control" placeholder="Password"
+														   aria-describedby="sizing-addon2" id="Password1">
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										<button type="button" class="btn btn-primary" id="confirm">确定</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- 注册的对话框 -->
+						<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog"
+							 aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title"
+											style="font-family: KaiTi;font-size: 17px;">注册
+										</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form>
+											<div class="form-group">
+												<label for="" class="col-form-label">注册信息</label>
+												<div class="input-group" style="margin-top: 10px;">
+													<span class="input-group-addon" id="sizing-addon6">姓名</span>
+													<input type="text" class="form-control" placeholder="Username"
+														   aria-describedby="sizing-addon2" id="Username">
+												</div>
+												<div class="input-group" style="margin-top: 10px;">
+													<span class="input-group-addon" id="sizing-addon4">手机号</span>
+													<input type="text" class="form-control" placeholder="Telephone"
+														   aria-describedby="sizing-addon2" id="tel">
+												</div>
+												<div class="input-group" style="margin-top: 15px;">
+													<span class="input-group-addon" id="sizing-addon5">密码</span>
+													<input type="text" class="form-control" placeholder="Password"
+														   aria-describedby="sizing-addon2" id="Password">
+												</div>
+											</div>
+										</form>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+										<button type="button" class="btn btn-primary" id="register">注册</button>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
@@ -203,7 +297,7 @@
 					<div class="col-md-4 gtco-footer-subscribe">
 						<form class="form-inline">
 							<div class="form-group">
-								<label class="sr-only" for="exampleInputEmail3">Email address</label>
+								<label class="sr-only" for="">Email address</label>
 								<input type="email" class="form-control" id="" placeholder="Email">
 							</div>
 							<button type="submit" class="btn btn-primary">Send</button>
@@ -255,38 +349,10 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<!-- For demo purposes Only ( You may delete this anytime :-)
-	<div id="colour-variations">
-		<a class="option-toggle"><i class="icon-cog"></i></a>
-		<h3>Preset Colors</h3>
-		<ul class="two-color">
-			<li>
-				<a href="javascript: void(0);" data-theme="style">
-					<span style="background: #3dcdbc;"></span>
-					<span style="background: #33a1bd;"></span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript: void(0);" data-theme="style-2">
-					<span style="background: #02459e;"></span>
-					<span style="background: #34bec8;"></span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript: void(0);" data-theme="style-3">
-					<span style="background: #8e43e7;"></span>
-					<span style="background: #ff4f81;"></span>
-				</a>
-			</li>
-			<li>
-				<a href="javascript: void(0);" data-theme="style-4">
-					<span style="background: #f06e82;"></span>
-					<span style="background: #fb815d;"></span>
-				</a>
-			</li>
-		</ul>
-	</div> -->
+	<!-- judgeLogin.js -->
+	<script src="js/judgeLogin.js"></script>
 	<script src="js/jquery.style.switcher.js"></script>
+	<!-- End demo purposes only -->
 	<script>
 		$(function () {
 			$('#colour-variations ul').styleSwitcher({
@@ -301,8 +367,52 @@
 				$('#colour-variations').toggleClass('sleep');
 			});
 		});
+
+		// 存储注册信息
+		$('#register').click(function () {
+			console.log($('#Username').val())
+			sessionStorage.setItem("Username", $('#Username').val());
+			sessionStorage.setItem("tel", $('#tel').val());
+			sessionStorage.setItem("Password", $('#Password').val());
+			alert("注册成功")
+			$('#exampleModal1').modal('hide')
+		})
+		// 匹配一下登录信息
+		$('#confirm').click(function () {
+			if ($('#tel1').val() === sessionStorage.getItem("tel") && $('#Password1').val() === sessionStorage.getItem('Password')) {
+				alert("登录成功")
+				var login = document.querySelector('#login');
+				var register1 = document.querySelector('#register1');
+				var test = document.querySelector('#test');
+				var testbox = document.querySelector('#testbox');
+				testbox.style.display = 'inline-block';
+				test.innerHTML = sessionStorage.getItem("Username");
+				login.style.display = 'none';
+				register1.style.display = 'none';
+				$('#exampleModal2').modal('hide')
+			}
+			else {
+				alert("手机号或密码不正确")
+			}
+		})
+		// 登录信息判断
+		var login = document.querySelector('#login');
+		var register1 = document.querySelector('#register1');
+		var test = document.querySelector('#test');
+		var testbox = document.querySelector('#testbox');
+		if (sessionStorage.getItem("Username") != null) {
+			testbox.style.display = 'inline-block';
+			test.innerHTML = sessionStorage.getItem("Username");
+			login.style.display = 'none';
+			register1.style.display = 'none';
+		}
 	</script>
 	<!-- End demo purposes only -->
+	<style>
+		.modal-backdrop.in {
+			z-index: -1;
+		}
+	</style>
 
 </body>
 
