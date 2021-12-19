@@ -314,6 +314,11 @@
     .pagination>li>span {
         background-color: #f6f6f6;
     }
+
+    .boxAppend {
+        margin-left: -569px;
+        margin-top: 20px;
+    }
 </style>
 
 <script>
@@ -331,19 +336,24 @@
     var pub = document.querySelector('.publish');
     var text = document.querySelector('#message-text')
     pub.addEventListener('click', function () {
-        console.log(text.value);
-        sessionStorage.setItem("inspiration1", text.value);
+        if (sessionStorage.getItem("Username") != null) {
+            console.log(text.value);
+            sessionStorage.setItem("inspiration1", text.value);
 
-        $('#exampleModal').modal('hide')
-        location.reload()
-
+            $('#exampleModal').modal('hide')
+            location.reload()
+        }
+        else {
+            alert("用户不存在，请先登录")
+            $('#exampleModal').modal('hide')
+        }
     })
     //将灵感显示在页面上
 
     if (sessionStorage.getItem("inspiration1") != null && sessionStorage.getItem("Username") != null) {
-        var tr = $(" <div class='col-md-6 col-sm-6 animate-box'> " +
+        var tr = $(" <div class='col-md-6 col-sm-6 animate-box boxAppend'> " +
             "<div class='gtco-testimony gtco-left'>" +
-            "<div><img src='images/person_8.png' alt='Free Website template by FreeHTML5.co'>" + "</div>" +
+            "<div><img src='images/默认头像.png' alt='Free Website template by FreeHTML5.co'>" + "</div>" +
             "<blockquote>" +
             "<p>&ldquo;" + sessionStorage.getItem("inspiration1")
             + "&rdquo;"

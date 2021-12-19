@@ -553,6 +553,17 @@
                 alert("手机号或密码不正确")
             }
         })
+        // 登录信息判断
+        var login = document.querySelector('#login');
+        var register1 = document.querySelector('#register1');
+        var test = document.querySelector('#test');
+        var testbox = document.querySelector('#testbox');
+        if (sessionStorage.getItem("Username") != null) {
+            testbox.style.display = 'inline-block';
+            test.innerHTML = sessionStorage.getItem("Username");
+            login.style.display = 'none';
+            register1.style.display = 'none';
+        }
     </script>
     <!-- End demo purposes only -->
     <style>
